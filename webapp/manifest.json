@@ -1,0 +1,137 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "core.home.sampleCoreElements",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"optionForUsersDataSrc": {
+				"uri": "model/data.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "core.home.sampleCoreElements.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "core.home.sampleCoreElements.i18n.i18n"
+				}
+			},
+			"optionForUsers": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "optionForUsersDataSrc"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "core.home.sampleCoreElements.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false,
+				"viewLevel": 1
+			},
+			"routes": [
+				{
+					"name": "MaterialOverview",
+					"pattern": "materialOverview",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"MaterialOverview"
+					]
+				},
+				{
+					"name": "homePage",
+					"pattern": "",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"homePage"
+					]
+				}
+			],
+			"targets": {
+				"homePage": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "homePage",
+					"viewName": "Home",
+					"viewLevel": 1
+				},
+				"App": {
+					"viewType": "XML",
+					"viewName": "App"
+				},
+				"MaterialOverview": {
+					"viewType": "XML",
+					"viewName": "MaterialOverview",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "materialOverview",
+					"viewLevel": 2
+				},
+				"MaterialInspection": {
+					"viewType": "XML",
+					"viewName": "MaterialInspection"
+				}
+			}
+		}
+	}
+}

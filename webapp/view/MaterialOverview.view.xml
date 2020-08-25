@@ -1,0 +1,8 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="core.home.sampleCoreElements.controller.MaterialOverview" xmlns:html="http://www.w3.org/1999/xhtml">
+			<Page title="materialOverview">
+				<content>
+					 <Label text="Hello world"></Label>
+				</content>
+			</Page>
+</mvc:View>
