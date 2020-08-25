@@ -10,11 +10,17 @@ sap.ui.define([
 		},
 
 		navToDetailPage: function (event) {
-			
-			if(event.getSource().getTitle()==="Detail")
-			
+
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("MaterialOverview");
+
+			if (event.getSource().getTitle() === "Detail") {
+
+				oRouter.navTo("MaterialInspection");
+			} else {
+
+				oRouter.navTo("MaterialOverview");
+
+			}
 
 		}
 
